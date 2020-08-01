@@ -35,21 +35,21 @@ var sprites = [
 ]
 
 var sounds = [
-    new Sound('foot step', 'fs', '/zapsplat_foley_footstep_single_shoe_soft_girls_carpet_007_36951.mp3' ),
-    new Sound('foot step', 'fs2', '/zapsplat_foley_footstep_single_shoe_soft_girls_carpet_015_36959.mp3' ),
-    new Sound('openning door','open','/zapsplat_household_door_wooden_modern_internal_close_007_36801.mp3'),
-    new Sound('closing door','close','/zapsplat_household_door_cabin_wood_front_close_002_44909.mp3'),
-    new Sound('doorbell','doorbell','/zapsplat_household_doorbell_ring_chime_002_42804.mp3'),
-    new Sound('sand','sand','/zapsplat_foley_sand_handful_drop_ground_002_43847.mp3'),
-    new Sound('burn','burn','/audio_hero_Fire_DIGIVJ2_19_355-extract1.mp3'),
-    new Sound('bite','bite','/zapsplat_human_eat_bite_crunch_crispbread_slice_001_16895.mp3'),
-    new Sound('oven open','oven_open','/glitched_tones_Oven Door Open.mp3'),
-    new Sound('oven shut','oven_shut','/glitched_tones_Oven Door Close.mp3'),
+    new Sound('foot step', 'fs', require('./audio/zapsplat_foley_footstep_single_shoe_soft_girls_carpet_007_36951.mp3' )),
+    new Sound('foot step', 'fs2', require('./audio/zapsplat_foley_footstep_single_shoe_soft_girls_carpet_015_36959.mp3' )),
+    new Sound('openning door','open',require('./audio/zapsplat_household_door_wooden_modern_internal_close_007_36801.mp3')),
+    new Sound('closing door','close',require('./audio/zapsplat_household_door_cabin_wood_front_close_002_44909.mp3')),
+    new Sound('doorbell','doorbell',require('./audio/zapsplat_household_doorbell_ring_chime_002_42804.mp3')),
+    new Sound('sand','sand',require('./audio/zapsplat_foley_sand_handful_drop_ground_002_43847.mp3')),
+    new Sound('burn','burn',require('./audio/audio_hero_Fire_DIGIVJ2_19_355-extract1.mp3')),
+    new Sound('bite','bite',require('./audio/zapsplat_human_eat_bite_crunch_crispbread_slice_001_16895.mp3')),
+    new Sound('oven open','oven_open',require('./audio/glitched_tones_Oven Door Open.mp3')),
+    new Sound('oven shut','oven_shut',require('./audio/glitched_tones_Oven Door Close.mp3')),
 ]
 
 var music = {
-    title: new Sound('title music','music','/title.mp3'),
-    outside: new Sound('outdoor sound','outside','/outside.mp3'),
+    title: new Sound('title music','music',require('./audio/title.mp3')),
+    outside: new Sound('outdoor sound','outside',require('./audio/outside.mp3')),
 }
 
 var characterModels = {
