@@ -36,13 +36,8 @@ const {interactionMatrix} = mode === 'sierra' ? SierraMatrix : ScummMatrix
 const gameData = { ...gameDataImport, ...gameConfigImport,
     sequences, interactionMatrix, makeConversations,}
 
-const {config} = gameConfigImport
-const {sprites} = gameDataImport 
-
 export {
     TitleScreen,
     EndingScreen, 
     gameData,
-    config,
-    sprites,
 }
