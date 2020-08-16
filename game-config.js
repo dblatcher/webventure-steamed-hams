@@ -92,10 +92,6 @@ const config = {
         picture: require('./title-skinner.png'),
         title: 'Skinner and the Superintendent',
         subtitle: 'Steamed hams but its a point and click adventure game.',
-        pageStyle: {
-            backgroundImage: 'linear-gradient(180deg, gray, transparent)',
-            fontSize: '150%',
-        }
     },
     endingScreen : {
 
