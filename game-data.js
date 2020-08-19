@@ -230,8 +230,9 @@ var makeCharacters = function() {return [
 var pcId = 'SKINNER_C';
 
 var makeRooms = function(){ return [
-    
-    new Room('FRONT', 'front of house', require('./rooms/Skinner_House.png'),280,160,{
+
+    new Room('FRONT', require('./rooms/Skinner_House.png'),280,160,{
+        name:'front of house',
         effectZones: [
             new EffectZone(
                 new RectZone(0,0,280,160),
@@ -254,11 +255,11 @@ var makeRooms = function(){ return [
         foregrounds: [
             new Foreground(require("./rooms/tree_front.png"),[200,0],[80,160]),
         ],
-    },{
         bgm:'outside'
     }),
 
-    new Room ('DINING','dining room', require('./rooms/dining_room2.png'),350,220,{
+    new Room ('DINING', require('./rooms/dining_room2.png'),350,220,{
+        name: 'dining room',
         worldItems: [
             new WorldItem('TABLE','table',[170,20,35,20],120,60,'neutral',worldItemModels.table),
             new WorldItem('DINING_KITCHENDOOR','door',[310,10,-30,0],68,150,'closed',worldItemModels.kitchen_door,{
@@ -280,13 +281,11 @@ var makeRooms = function(){ return [
             new PolyZone ([ [86,81],[86,220],[270,220],[270,81] ]),
             new PolyZone ([ [270,220],[270,81],[350,0],[350,220] ]),
             new PolyZone ([ [110,20],[230,20],[230,30],[110,30] ]),
-        ]
-    },{
-        bgm: null
+        ],
+        bgm: null,
     }),
 
-
-    new Room ('KITCHEN', 'kitchen', require('./rooms/kitchen.png'),290,180,{
+    new Room ('kitchen', require('./rooms/kitchen.png'),290,180,{
         worldItems : [    
             new WorldItem('OVEN','oven', [145,35,30,-10],70,100,'closed',worldItemModels.oven),
             new WorldItem('KRUSTYBURGER','Krusty Burger',[210,70,-15,-30],50,40,'neutral',null,{noZoneScaling:true}),
@@ -306,7 +305,7 @@ var makeRooms = function(){ return [
         ]
     }),
 
-    new Room('PORCH', 'porch', require('./rooms/bigfront.png'),523,320,{
+    new Room('porch', require('./rooms/bigfront.png'),523,320,{
         effectZones: [
             new EffectZone (
                 new RectZone(0,0,523,320), {scale: function(){ 
@@ -332,11 +331,8 @@ var makeRooms = function(){ return [
             }),
             new WorldItem('window_fire','window',[440,138],200,130,'neutral',worldItemModels.fireInWindow,{unclickable:true, noZoneScaling:true,}),
         ],
-
-    },{
         bgm:'outside'
-    } )
-
+    })
 ]}
 
 
