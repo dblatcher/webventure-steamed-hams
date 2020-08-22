@@ -4,25 +4,26 @@ import { Verb } from "../../src/modules/constructors";
 
 
 var verbList = [
-    new Verb('walk to','WALK',{
+    new Verb('WALK',{
         icon: require('../../src/icons/walking.svg'),
+        description: 'walk to',
     }),
-    new Verb('look at','LOOK', {
+    new Verb('LOOK', {
         icon: require('../../src/icons/eye.svg'),
         showOnInventoryBox: true,
+        description: 'look at',
     }),
-    new Verb('activate','ACTIVATE', {
+    new Verb('ACTIVATE', {
         icon: require('../../src/icons/hand-paper.svg'),
+        description: 'activate',
     }),
-    new Verb('use','USE', {
+    new Verb('USE', {
+        description: 'use',
         preposition:'with',
         showOnInventoryBox: true,
         usesSelectedItem: true,
         icon: require('../../src/icons/hand-pointer.svg'),
     }),
-    // new Verb('talk to','TALK',{
-    //     icon: require('../../src/icons/comment.svg')
-    // }),
 ]
 
 
