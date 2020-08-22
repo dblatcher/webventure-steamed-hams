@@ -240,10 +240,21 @@ var makeRooms = function(){ return [
             ),
         ],
         worldItems: [
-            new WorldItem('garage','car hole',[65,16,0,-10],200,170),
-            new WorldItem('doorbell','door',[142,28,5,-10],80,120,'closed',worldItemModels.door),
-            new WorldItem('front_fence','f',[155,8],470,129,'neutral',worldItemModels.front_fence,{unclickable:true,zAdjust:10}),
-            new WorldItem('front_window_fire','fire',[175,35],25,30,'neutral',worldItemModels.fireInWindow,{unclickable:true,removed:true, noZoneScaling:true,}),
+            new WorldItem('garage',[65,16,0,-10],200,170,null,{
+                name: 'car hole',
+            }),
+            new WorldItem('doorbell',[142,28,5,-10],80,120,worldItemModels.door,{
+                initialCycle:'closed'
+            }),
+            new WorldItem('front_fence',[155,8],470,129,worldItemModels.front_fence,{
+                unclickable:true,
+                zAdjust:10,
+            }),
+            new WorldItem('front_window_fire',[175,35],25,30,worldItemModels.fireInWindow,{
+                unclickable:true,
+                removed:true, 
+                noZoneScaling:true,
+            }),
         ],
         obstacles: [
             new PolyZone([ [0,40],[30,16],[100,20], [100,40] ]),
@@ -261,17 +272,23 @@ var makeRooms = function(){ return [
     new Room ('DINING', require('./rooms/dining_room2.png'),350,220,{
         name: 'dining room',
         worldItems: [
-            new WorldItem('TABLE','table',[170,20,35,20],120,60,'neutral',worldItemModels.table),
-            new WorldItem('DINING_KITCHENDOOR','door',[310,10,-30,0],68,150,'closed',worldItemModels.kitchen_door,{
+            new WorldItem('table',[170,20,35,20],120,60,worldItemModels.table),
+            new WorldItem('DINING_KITCHENDOOR',[310,10,-30,0],68,150,worldItemModels.kitchen_door,{
+                name:'door',
+                initialCycle: 'closed',
                 zAdjust:500,
                 recommendedVerb: {'closed':'OPEN', 'open':'SHUT'}
             }),
-            new WorldItem('DINING_WAYOUT','way out',[45,45,20,10],50,125,'neutral'),
-            new WorldItem('ICE_BUCKET', 'ice bucket', [170,70],30,25,'neutral',worldItemModels.iceBucket,{
+            new WorldItem('DINING_WAYOUT',[45,45,20,10],50,125, null,{
+                name: 'way out'
+            }),
+            new WorldItem('ice bucket', [170,70],30,25,worldItemModels.iceBucket,{
                 zAdjust:-50,
                 removed:true,
             }),
-            new WorldItem('HAMBURGERS', '\'steamed hams\'', [170,60],80,30,'four',worldItemModels.hamburgers,{
+            new WorldItem('HAMBURGERS', [170,60],80,30,worldItemModels.hamburgers,{
+                name:'\'steamed hams\'',
+                initialCycle: 'four',
                 zAdjust:-40,
                 removed:true,
             }),
@@ -286,12 +303,19 @@ var makeRooms = function(){ return [
     }),
 
     new Room ('kitchen', require('./rooms/kitchen.png'),290,180,{
-        worldItems : [    
-            new WorldItem('OVEN','oven', [145,35,30,-10],70,100,'closed',worldItemModels.oven),
-            new WorldItem('KRUSTYBURGER','Krusty Burger',[210,70,-15,-30],50,40,'neutral',null,{noZoneScaling:true}),
-            new WorldItem('KITCHEN_DININGDOOR','way back to dining room',[145,0],290,12),
-            new WorldItem('cupboard','cupboard',[90,39,0,-5],50,130),
-            new WorldItem('foil','foil',[270,70,-30,-35],50,15,'neutral',worldItemModels.foil),
+        worldItems : [
+            new WorldItem('OVEN', [145,35,30,-10],70,100,worldItemModels.oven,{
+                initialCycle: 'closed',
+            }),
+            new WorldItem('KRUSTYBURGER',[210,70,-15,-30],50,40,null,{
+                name: 'Krusty Burger',
+                noZoneScaling: true,
+            }),
+            new WorldItem('KITCHEN_DININGDOOR',[145,0],290,12, null, {
+                name: 'way back to dining room'
+            }),
+            new WorldItem('cupboard',[90,39,0,-5],50,130),
+            new WorldItem('foil',[270,70,-30,-35],50,15,worldItemModels.foil),
         ],
         obstacles : [
             new RectZone(0,44,290,20),
@@ -321,15 +345,30 @@ var makeRooms = function(){ return [
         ],
 
         worldItems: [
-            new WorldItem('bush','bush',[35,49,20,-15],70,50,undefined,null,{noZoneScaling:true}),
-            new WorldItem('bush_2','bush',[120,49,20,-15],60,70,undefined,null,{noZoneScaling:true}),
-            new WorldItem('bush_3','bush',[370,44,-20,-10],55,80,undefined,null,{noZoneScaling:true}),
-            new WorldItem('bush_4','bush',[445,44,-20,-10],70,50,undefined,null,{noZoneScaling:true}),
-            new WorldItem('front_door','door',[268,89,5,-10],123,160,'closed',worldItemModels.door, {
+            new WorldItem('bush',[35,49,20,-15],70,50,null,{
+                noZoneScaling:true,
+            }),
+            new WorldItem('bush_2',[120,49,20,-15],60,70,null,{
+                name: 'bush',
+                noZoneScaling:true,
+            }),
+            new WorldItem('bush_3',[370,44,-20,-10],55,80,null,{
+                name: 'bush',
+                noZoneScaling:true,
+            }),
+            new WorldItem('bush_4',[445,44,-20,-10],70,50,null,{
+                name: 'bush',
+                noZoneScaling:true,
+            }),
+            new WorldItem('front door',[268,89,5,-10],123,160,worldItemModels.door, {
+                initialCycle: 'closed',
                 noZoneScaling:true,
                 recommendedVerb: {'closed':'OPEN', 'open':'SHUT'}
             }),
-            new WorldItem('window_fire','window',[440,138],200,130,'neutral',worldItemModels.fireInWindow,{unclickable:true, noZoneScaling:true,}),
+            new WorldItem('window fire',[440,138],200,130,worldItemModels.fireInWindow,{
+                unclickable:true, 
+                noZoneScaling:true,
+            }),
         ],
         bgm:'outside'
     })
