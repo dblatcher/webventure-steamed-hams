@@ -376,17 +376,17 @@ var makeRooms = function(){ return [
 
 
 var makeInventoryItems = function() { return  [
-    new InventoryItem('roast', 'raw roast', require('./items/roast.png'),{startWith:true, bg:{shape:'diamond', color:'pink'}}),
-    new InventoryItem('todo', 'to do list', require('./items/todo.png'),{startWith:true,  recommendedVerb:'LOOK', bg:{shape:'circle', color:'lightgreen'}}),
-    new InventoryItem('roast_glazed', 'glazed roast', require('./items/glazed-roast.png'),{bg:{color:'red',shape:'diamond'}}),
-    new InventoryItem('bucket_foil', 'ice bucket', require('./items/bucket_foil.png')),
-    new InventoryItem('bucket_sand', 'fire bucket', require('./items/bucket_sand.png')),
-    new InventoryItem('bucket_empty', 'fire bucket', require('./items/bucket.png')),
-    new InventoryItem('foil', 'aluminium foil', require('./items/foil.jpg')),
-    new InventoryItem('bourbon','bourbon', require('./items/bourbon.png')),
-    new InventoryItem('hamburger_bag','hamburgers', require('./items/bag.png'),{bg:{color:'blue',shape:'diamond'}}),
-    new InventoryItem('hamburger_platter','elegantly arranged hamburgers', require('./items/hamburgers_on_platter.png')),
-    new InventoryItem('platter','platter', require('./items/platter.png')),
+    new InventoryItem('roast', require('./items/roast.png'),{name:'raw roast', startWith:true, background: {shape:'diamond', color:'pink'}}),
+    new InventoryItem('todo', require('./items/todo.png'),{name:'to do list', startWith:true,  recommendedVerb:'LOOK', background: {shape:'circle', color:'lightgreen'}}),
+    new InventoryItem('roast_glazed', require('./items/glazed-roast.png'),{name:'glazed roast', background: {color:'red',shape:'diamond'}}),
+    new InventoryItem('bucket_foil', require('./items/bucket_foil.png'),{name:'ice bucket'}),
+    new InventoryItem('bucket_sand', require('./items/bucket_sand.png'),{name: 'fire bucket',}),
+    new InventoryItem('bucket_empty', require('./items/bucket.png'),{name: 'fire bucket',}),
+    new InventoryItem('foil', require('./items/foil.jpg'),{name: 'aluminium foil',}),
+    new InventoryItem('bourbon', require('./items/bourbon.png')),
+    new InventoryItem('hamburger_bag', require('./items/bag.png'),{name:'hamburgers', background: {color:'blue',shape:'diamond'}}),
+    new InventoryItem('hamburger_platter', require('./items/hamburgers_on_platter.png'),{name:'elegantly arranged hamburgers',}),
+    new InventoryItem('platter', require('./items/platter.png')),
 
 ]};
 
