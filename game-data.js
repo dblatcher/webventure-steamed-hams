@@ -390,12 +390,12 @@ var makeInventoryItems = function() { return  [
 
 ]};
 
-var setGameVars = function ()  { return {
+var initialGameVars = {
     cupboardEmpty: false,
     beenToKrustyBurger:false,
 	roastIsInOven: false,
 	iceBucketIsOnTable : false,
 	haveSeenBurningRoast: false,
-}};
+};
 
-export { sprites, makeRooms, makeInventoryItems, makeCharacters, pcId, setGameVars, sounds, music }
+export { sprites, makeRooms, makeInventoryItems, makeCharacters, pcId, initialGameVars, sounds, music }
