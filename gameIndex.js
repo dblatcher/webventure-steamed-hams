@@ -4,7 +4,7 @@ import * as ScummMatrix from './game-interactions'
 import * as SierraMatrix from './game-interactions-sierra'
 
 import { makeConversations } from "./game-conversations";
-import * as gameDataImport from "./game-data";
+import * as gameContentsImport from "./game-contents";
 
 import * as gameConfigImportSierra from './game-config-sierra'
 import * as gameConfigImportScumm from './game-config'
@@ -33,7 +33,7 @@ const gameConfigImport    = mode === 'sierra' ? gameConfigImportSierra : gameCon
 const {interactionMatrix} = mode === 'sierra' ? SierraMatrix : ScummMatrix
 
 
-const gameData = { ...gameDataImport, ...gameConfigImport,
+const gameData = { ...gameContentsImport, ...gameConfigImport,
     sequences, interactionMatrix, makeConversations,}
 
 export {

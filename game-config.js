@@ -102,6 +102,13 @@ const config = {
 
     },
     defaultVerb: {WorldItem:"LOOK", InventoryItem:"USE", Character:"TALK"},
+    initialGameVars: {
+        cupboardEmpty: false,
+        beenToKrustyBurger:false,
+        roastIsInOven: false,
+        iceBucketIsOnTable : false,
+        haveSeenBurningRoast: false,
+    }
 }
 
 export { defaultResponses, verbList, config }

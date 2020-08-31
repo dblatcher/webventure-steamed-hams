@@ -227,7 +227,7 @@ var makeCharacters = function() {return [
     }),
 ]}
 
-var pcId = 'SKINNER_C';
+
 
 var makeRooms = function(){ return [
 
@@ -390,12 +390,4 @@ var makeInventoryItems = function() { return  [
 
 ]};
 
-var initialGameVars = {
-    cupboardEmpty: false,
-    beenToKrustyBurger:false,
-	roastIsInOven: false,
-	iceBucketIsOnTable : false,
-	haveSeenBurningRoast: false,
-};
-
-export { sprites, makeRooms, makeInventoryItems, makeCharacters, pcId, initialGameVars, sounds, music }
+export { sprites, sounds, music, makeRooms, makeInventoryItems, makeCharacters }

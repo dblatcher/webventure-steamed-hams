@@ -31,7 +31,7 @@
 <script>
 // ['width','height','sprite','fx','fy','index','measure'],
 import Sprite from "../../src/components/Sprite";
-import {sprites} from "./game-data";
+import {sprites} from "./game-contents";
 
 const chalmersSprite = sprites.filter(sprite => sprite.id === 'ch-r')[0]
 
