@@ -1,8 +1,7 @@
 import { StandardOrder } from "../../src/modules/StandardOrder";
 import { ConditionalOrder } from "../../src/modules/ConditionalOrder";
-import { failableOrder } from "../../src/modules/failableOrder"
 
-const starting = [
+const _starting = [
     new StandardOrder ('[Status]CUTSCENE'),
    [ new StandardOrder ('GAME','showNarration',['Springfield','The Skinner house'],{time:3}),
     new StandardOrder ('pc>>175,10') ],
@@ -12,6 +11,18 @@ const starting = [
     new StandardOrder ('pc::I\'d better glaze this ham and get it in the oven before Superintendent Chalmers arrives',{time:3000}),
     new StandardOrder ('pc::also, I need an ice bucket...'),
     new StandardOrder ('[Status]LIVE'),
+]
+
+const _fallbackDefaultResponse = [
+    new ConditionalOrder({
+        conditions:[['WILDCARD','{{game.subject.dataType}}', '!=', 'InventoryItem']],
+        orderIfTrue:['pc^^{{game.subject.id}}'],
+    }),
+    new ConditionalOrder({
+        conditions:[['WILDCARD','{{game.object.id}}', 'false']],
+        orderIfTrue:['pc:: I can\'t {{game.verb.description}} the {{game.subject.name}}!'],
+        orderIfFalse:['pc:: I can\'t {{game.verb.description}} the {{game.subject.name}} {{game.verb.preposition}} the {{game.object.name}}!'],
+    }),
 ]
 
 const pourSandInBush = [
@@ -166,4 +177,4 @@ const test = [
 ]
 
 
-export default { starting, fire, pourSandInBush, goToKrustyBurger, chalmersComesIn, chalmersWalkingAlong, chalmersAtDoor, greetChalmers,seeBurningRoast,ending, test };
+export default { _starting, _fallbackDefaultResponse, fire, pourSandInBush, goToKrustyBurger, chalmersComesIn, chalmersWalkingAlong, chalmersAtDoor, greetChalmers,seeBurningRoast,ending, test };

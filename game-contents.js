@@ -47,6 +47,7 @@ var sounds = [
     new Sound('oven shut','oven_shut',require('./audio/glitched_tones_Oven Door Close.mp3')),
 ]
 
+//to do - change id of first item to 'title' to match the property name
 var music = {
     title: new Sound('title music','music',require('./audio/title.mp3')),
     outside: new Sound('outdoor sound','outside',require('./audio/outside.mp3')),

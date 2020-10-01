@@ -1,43 +1,52 @@
 import TitleScreen from './Title-Screen'
 import EndingScreen from './Ending-Screen'
-import * as ScummMatrix from './game-interactions'
-import * as SierraMatrix from './game-interactions-sierra'
-
-import { makeConversations } from "./game-conversations";
+import makeConversations from "./game-conversations";
 import * as gameContentsImport from "./game-contents";
-
-import * as gameConfigImportSierra from './game-config-sierra'
-import * as gameConfigImportScumm from './game-config'
-
 import sequences from "./sequences";
 
-function readParam (param) {
+import scummConfig from './game-config'
+import ScummMatrix from './game-interactions'
+import scummVerbList from '../../src/defaults/defaultScummVerbs'
+
+import sierraConfig from './game-config-sierra'
+import SierraMatrix from './game-interactions-sierra'
+import sierraVerbList from '../../src/defaults/defaultSierraVerbs'
+
+
+function readParam(param) {
     let params = window.location.search
-    if (params.indexOf(param) === -1) {return undefined}
-    let answer =''
-    let startIndex =  params.indexOf(param) + 1 + param.length
+    if (params.indexOf(param) === -1) { return undefined }
+    let answer = ''
+    let startIndex = params.indexOf(param) + 1 + param.length
 
     function addCharacter(index) {
         let nextChar = params.charAt(index)
-        if (['','&','='].includes(nextChar) ) {return}
+        if (['', '&', '='].includes(nextChar)) { return }
         answer += nextChar
-        addCharacter(index+1)
+        addCharacter(index + 1)
     }
     addCharacter(startIndex)
     return answer
 }
 
+
 let mode = readParam('mode') || 'sierra'
 
-const gameConfigImport    = mode === 'sierra' ? gameConfigImportSierra : gameConfigImportScumm
-const {interactionMatrix} = mode === 'sierra' ? SierraMatrix : ScummMatrix
+const config = mode === 'sierra' ? sierraConfig : scummConfig
+const interactionMatrix = mode === 'sierra' ? SierraMatrix : ScummMatrix
+const verbList = mode === 'sierra' ? sierraVerbList : scummVerbList
 
-
-const gameData = { ...gameContentsImport, ...gameConfigImport,
-    sequences, interactionMatrix, makeConversations,}
+const gameData = {
+    ...gameContentsImport,
+    config,
+    verbList,
+    sequences,
+    interactionMatrix,
+    makeConversations,
+}
 
 export {
     TitleScreen,
-    EndingScreen, 
+    EndingScreen,
     gameData,
 }
