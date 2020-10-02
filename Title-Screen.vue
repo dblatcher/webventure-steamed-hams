@@ -1,8 +1,10 @@
 <template>
     <main class="title-page">
+        <FloatingPicture/>
+        <FloatingPicture/>
+        <FloatingPicture/>
+
         <div class="title-page__frame">
-
-
             <h1 class="title-page__title">
                 <p class="title-page__title-line title-page__title-line--1">
                     <span class="title-page__title-line--large">S</span>kinner
@@ -14,6 +16,7 @@
                 <p class="title-page__subtitle">Steamed Hams but it's a point and click adventure game</p>
             </h1>
         </div>
+
 
 
         <div class="title-page__loading">
@@ -68,10 +71,11 @@
 
 <script>
 
-
+import FloatingPicture from "./components/FloatingPicture";
 
 export default {
     name: "TitleScreen",
+    components: {FloatingPicture},
     props: ["soundEnabled"],
 
     data: function() {
