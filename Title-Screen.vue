@@ -1,8 +1,5 @@
 <template>
     <main class="title-page">
-        <FloatingPicture/>
-        <FloatingPicture/>
-        <FloatingPicture/>
 
         <div class="title-page__frame">
             <h1 class="title-page__title">
@@ -17,13 +14,15 @@
             </h1>
         </div>
 
-
+        <FloatingPicture picIndex="0"/>
+        <FloatingPicture picIndex="1"/>
+        <FloatingPicture picIndex="2"/>
+        <FloatingPicture picIndex="3"/>
+        <FloatingPicture picIndex="4"/>
 
         <div class="title-page__loading">
             <slot name="loading-bar"></slot>
         </div>
-
-
 
         <div class="title-page__button-set">
             <slot name="file-buttons"></slot>
